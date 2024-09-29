@@ -1,0 +1,14 @@
+<h1>Edit Activity</h1>
+
+<% if (typeof error !== 'undefined' && error) { %>
+  <div style="color: red;"><%= error %></div>
+<% } %>
+
+<form action="/edit/<%= activity.id %>" method="POST">
+  <input type="text" name="title" placeholder="Activity Title" required value="<%= activity.title %>">
+  <input type="date" name="date" required value="<%= activity.date %>">
+  <textarea name="description" placeholder="Description" required><%= activity.description %></textarea>
+  <button type="submit">Update Activity</button>
+</form>
+
+<a href="/">Back to List</a>
